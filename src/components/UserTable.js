@@ -22,7 +22,7 @@ const UserTable = () => {
 
   return (
     <div className="table-responsive">
-      <h1>Dummy Data</h1>
+      <h1 className="text-center">Dummy Data</h1>
       <br></br>
       <Table striped bordered hover responsive>
         <thead>
