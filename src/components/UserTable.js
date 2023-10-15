@@ -6,10 +6,9 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    
     fetch('https://dummyjson.com/users')
       .then((response) => response.json())
-      .then((data) => setUsers(data.users)); 
+      .then((data) => setUsers(data.users));
   }, []);
 
   const handleDomainClick = (domain) => {
@@ -54,17 +53,13 @@ const UserTable = () => {
               <td>{user.lastName}</td>
               <td>{user.gender}</td>
               <td>
-                <a href={`mailto:${user.email}`} onClick={(e) => e.preventDefault()}>
+                <a href={`mailto:${user.email}`} onClick={(e) => handleEmailClick(user.email)}>
                   {user.email}
                 </a>
               </td>
               <td>{user.username}</td>
               <td>
-                <a
-                  href={`https://${user.domain}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={`https://${user.domain}`} target="_blank" onClick={(e) => handleDomainClick(user.domain)}>
                   {user.domain}
                 </a>
               </td>
